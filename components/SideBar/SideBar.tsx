@@ -2,22 +2,22 @@
 import Image from "next/image"
 import { Separator } from "../ui/separator"
 import sk_logo from "@/image/sk_logo.svg"
-import StudentBtn from "../adminPage/Btn/StudentBtn"
+import StudentBtn from "../Btns/StudentBtn"
 import Link from "next/link"
-import CourseBtn from "../adminPage/Btn/CourseBtn"
-import Transaction from "../adminPage/Btn/TransactionBtn"
-import InceptionBtn from "../adminPage/Btn/InceptionBtn"
-import HomeBtn from "../adminPage/Btn/HomeBtn"
-import PayBtn from "../adminPage/Btn/PayBtn"
-import TeacherBtn from "../adminPage/Btn/TeacherBtn"
+import CourseBtn from "../Btns/CourseBtn"
+import Transaction from "../Btns/TransactionBtn"
+import InceptionBtn from "../Btns/InceptionBtn"
+import HomeBtn from "../Btns/HomeBtn"
+import PayBtn from "../Btns/PayBtn"
+import TeacherBtn from "../Btns/TeacherBtn"
 
 const SideBar = () => {
   return (
     <div className="bg-background border h-screen">
 
-      <Link href={"/"} className="w-full h-1/12 flex items-center justify-center cursor-default ">
-        <Image src={sk_logo} alt="Logo" className="w-20 h-auto " />
-        <h1 className="font-bold text-4xl font-itim ">SK Tutor</h1>
+      <Link href={"/"} className="w-full h-1/12 gap-2 flex items-center justify-center cursor-default ">
+        <Image src={sk_logo} alt="Logo" className="w-15 h-auto " />
+        <h1 className="font-extrabold text-4xl ">LMS</h1>
       </Link >
 
       <Separator className="shadow-sm shadow-secondary" />

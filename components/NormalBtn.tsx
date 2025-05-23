@@ -9,7 +9,6 @@ type NormalBill = {
     name: string
 }
 
-
 const NormalBill = (props: NormalBill) => {
     const pathname = usePathname();
     const activePage = pathname.split('/').pop() || '/';
@@ -17,9 +16,9 @@ const NormalBill = (props: NormalBill) => {
     return (
         <div
             className="w-full h-fit flex flex-row justify-around">
-            <Link href={`${process.env.NEXT_PUBLIC_AdminPath}${props.href}`} className={`flex flex-row gap-2 items-center font-medium w-full h-full text-2xl ${(props.href.includes(activePage) && !activePage.includes("/")) ? "bg-secondary/90" : ""} transition-all hover:bg-secondary/90 text-start duration-300 px-4 py-2`}>
+            <Link href={`${props.href}`} className={`group relative flex flex-row gap-2 items-center font-medium w-full h-full text-2xl ${(props.href.includes(activePage) && !activePage.includes("/")) ? "bg-primary text-primary-foreground" : ""} transition-all text-start duration-300 px-4 py-2`}>
             {props.ic}
-            {props.name}
+            <span className={`underline-slide `}>{props.name}</span>
             </Link>
         </div>
     )

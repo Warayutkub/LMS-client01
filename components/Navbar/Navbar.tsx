@@ -3,10 +3,10 @@ import { ModeToggle } from "../darkModeToggle"
 import Avatar from "./Avatar"
 import Logo from "./Date"
 import Setting from "./Setting"
-
+    
 const Navbar = () => {
     return (
-        <div className="w-full bg-sidebar flex justify-between h-1/12 px-8 mx-auto">
+        <div className="w-full bg-primary text-primary-foreground py-2 flex justify-between h-1/12 px-8 mx-auto">
             <div className="h-full flex items-center">
                 <Logo />
             </div>

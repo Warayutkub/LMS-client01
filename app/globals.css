@@ -6,6 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-navbar: var(--navbar);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -76,11 +77,12 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.623 0.214 259.815);
+  --navbar: oklch(0.73 0.1458 249.51);
 }
 
 .dark {
   --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.91 0 340.94);
+  --foreground: oklch(1 0 0);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.91 0 340.94);
   --popover: oklch(0.21 0.006 285.885);
@@ -110,6 +112,7 @@
   --sidebar-accent-foreground: oklch(0.91 0 340.94);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.488 0.243 264.376);
+  --navbar: oklch(0.6131 0.211962 256.3304);
 }
 
 
@@ -118,19 +121,42 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-@layer components{
+@layer components {
   .font-niramit {
     font-family: 'Niramit', sans-serif;
   }
+
   .font-itim {
     font-family: 'Itim', sans-serif;
   }
+
   .font-bai_jamjuree {
     font-family: "Bai Jamjuree", sans-serif;
+  }
+
+  .underline-slide {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-slide::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .group:hover .underline-slide::after {
+    width: 100%;
   }
 }
